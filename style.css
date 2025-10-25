@@ -1,0 +1,108 @@
+/* Styles personnalisés pour Ndeko */
+:root{
+  --primary:#02c619;
+}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f8f9fa}
+/* Hero: maintenant utilise une image d'arrière-plan + overlay sombre pour la lisibilité */
+.hero {
+  background:url('../img/fonds2.jpeg') center/cover no-repeat; 
+  height:60vh; 
+  position:relative; 
+  overflow:hidden;
+  animation: zoomBackground 15s ease-in-out infinite alternate; 
+}
+
+@keyframes zooBackground {
+  from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 110% 110%;
+  }
+}
+
+.hero h1, .hero p, .hero a {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+  animation-delay: 0.5s;
+}
+
+.hero a {
+  animation-delay: 1s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));z-index:1}
+.hero .container{position:relative;z-index:2}
+.card{box-shadow:0 2px 10px rgba(0,0,0,0.03)}
+.navbar-brand{font-weight:700}
+footer{border-top:1px solid rgba(0,0,0,0.05)}
+
+/* Responsive tweaks */
+@media(min-width:768px){
+  .hero{height:70vh}
+}
+
+/* Logo dans la navbar */
+.brand-logo{display:inline-flex;align-items:center;gap:.6rem}
+.brand-logo img{height:34px;width:auto;display:block}
+.brand-logo .brand-text{color:#fff;font-weight:700;letter-spacing:.02em}
+
+/* Section publicités / affiches */
+.ads-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.ads-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(13,110,253,0.06)}
+.ads-card img{width:100%;height:auto;display:block}
+
+/* Section publicités / affiches pour faire défiler les images dans la page d'accueil*/
+.ads-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100;
+}
+
+.ads-track {
+  display: flex;
+  width: max-content;
+  animation: slide 25s linear infinite;
+}
+
+/* Pause automatique au survol */
+.ads-slider:hover .ads-track {
+  animation-play-state: paused;
+}
+
+.ads-track a {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.ads-track img {
+  width: 250px; /* Adapte la taille de mon design */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.ads-track img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Animation de défilement */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
