@@ -5,7 +5,7 @@
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f8f9fa}
 /* Hero: maintenant utilise une image d'arrière-plan + overlay sombre pour la lisibilité */
 .hero {
-  background:url('../img/fonds2.jpeg') center/cover no-repeat; 
+  background:url('fonds2.jpeg') center/cover no-repeat; 
   height:60vh; 
   position:relative; 
   overflow:hidden;
