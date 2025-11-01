@@ -55,7 +55,7 @@ footer{border-top:1px solid rgba(0,0,0,0.05)}
 
 /* Logo dans la navbar */
 .brand-logo{display:inline-flex;align-items:center;gap:.6rem}
-.brand-logo img{height:34px;width:auto;display:block}
+.brand-logo img{height:50px;width:auto;display:block}
 .brand-logo .brand-text{color:#fff;font-weight:700;letter-spacing:.02em}
 
 /* Section publicités / affiches */
